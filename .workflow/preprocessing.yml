@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - "data/StudentsPerformance.csv"
-      - "automate_Nama-siswa.py"
+      - "automate_Icha-aulia.py"
   workflow_dispatch:
 
 jobs:
@@ -25,11 +25,7 @@ jobs:
 
     - name: Run Preprocessing Script
       run: |
-        python -c "
-import automate_Nama_siswa as auto
-df = auto.preprocess_student_data('data/StudentsPerformance.csv')
-df.to_csv('processed/processed_data.csv', index=False)
-"
+        python automate_Icha-aulia.py data/StudentsPerformance.csv processed/processed_data.csv
         
     - name: Commit processed data
       run: |
